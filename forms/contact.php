@@ -29,7 +29,7 @@
     'host' => 'smtp.gmail.com',
     'username' => 'comm@sbsdyn.com',
     'password' => 'DynamicCommunication88!',
-    'port' => '587'
+    'port' => '25'
   );
 
 
