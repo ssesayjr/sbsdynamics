@@ -1,16 +1,34 @@
 <?php
-if(isset($_POST['submit'])) {
-    print_r($_POST);
-    die;
-    $email_to = "info@sbsdyn.com";
-    $email_subject = "Mint Makeup & Beauty Enquiry";        
 
-    $fname = $_POST['name']; // required
-    $message = $_POST['subject']; // required
-    $email_from = $_POST['email']; // required
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\SMTP;
 
-    // create email content
-    $email_content = "From:"." ".$name."\n"."Email:"." ".$email_from."\n"."Message:"." ".$message; 
-    mail($email_to, $email_subject, $email_content);
-}
+
+require './assets/vendor/phpmailer/src/Exception.php';
+require './assets/vendor/phpmailer/src/PHPMailer.php';
+require './assets/vendor/phpmailer/src/SMTP.php';
+
+$mail = new PHPMailer(true);
+
+$mail->isSMTP();
+$mail->SMTPAuth = true;
+
+$mail->Host = "smtp.gmail.com";
+$mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+$mail->Port = 587;
+
+$mail->Username = "comm@sbsdyn.com";
+$mail->Password = "DynamicCommunication88!";
+
+$mail->setFrom($email, $name);
+$mail->addAddress("samuel.sesay@sbsdyn.com", "Samuel");
+
+$mail->Subject = $subject;
+$mail->Body = $message;
+
+$mail->send();
+
+header("Location: index.html");
+
 ?> 
