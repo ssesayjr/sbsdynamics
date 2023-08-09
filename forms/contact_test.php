@@ -29,6 +29,5 @@ $mail->Body = $message;
 
 $mail->send();
 
-header("Location: index.html");
-
+echo "email sent";
 ?> 
