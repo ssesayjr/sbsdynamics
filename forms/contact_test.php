@@ -25,8 +25,8 @@ $mail->Host = "smtp-relay.gmail.com";
 $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
 $mail->Port = 587;
 
-$mail->Username = "comm@sbsdyn.com";
-$mail->Password = "DynamicCommunication88!";
+$mail->Username = "samuel.sesay@sbsdyn.com";
+$mail->Password = "DynamicEnterprise88!";
 
 $mail->setFrom($email, $name);
 $mail->addAddress("samuel.sesay@sbsdyn.com", "Samuel");
