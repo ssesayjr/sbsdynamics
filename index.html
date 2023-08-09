@@ -561,7 +561,7 @@
           </div>
 
           <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-            <form method="post" role="form" class="php-email-form" id="contact-form">
+            <form action="forms/contact.php" method="post" role="form" class="php-email-form" id="contact-form">
               <div class="row">
                 <div class="form-group col-md-6">
                   <label for="name">Your Name</label>
@@ -617,7 +617,7 @@
          const formValues = {
              name: form.elements.name.value,
              email: form.elements.email.value,
-             message: form.elements.subject.value
+             message: form.elements.message.value
          };
 
 
