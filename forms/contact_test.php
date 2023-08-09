@@ -1,5 +1,8 @@
 <?php
 
+require "vendor/autoload.php";
+
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\SMTP;
@@ -8,6 +11,11 @@ use PHPMailer\PHPMailer\SMTP;
 require './assets/vendor/phpmailer/src/Exception.php';
 require './assets/vendor/phpmailer/src/PHPMailer.php';
 require './assets/vendor/phpmailer/src/SMTP.php';
+
+$name = $_POST["name"];
+$email = $_POST["email"];
+$subject = $_POST["subject"];
+$message = $_POST["message"];
 
 $mail = new PHPMailer(true);
 
