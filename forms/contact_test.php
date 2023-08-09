@@ -9,11 +9,34 @@
   // Replace contact@example.com with your real receiving email address
   $receiving_email_address = 'info@sbsdyn.com';
 
-  if( file_exists($php_email_form = '../assets/vendor/php-email-form/validate.js' )) {
-    include( $php_email_form );
-  } else {
-    die( 'Unable to load the "PHP Email Form" Library!');
+  $errors = [];
+  
+  if (!empty($errors)) {
+      $allErrors = join('<br/>', $errors);
+      $errorMessage = "<p style='color: red;'>{$allErrors}</p>";
+   }
+  
+  if (!empty($_POST)) {
+     $name = $_POST['name'];
+     $email = $_POST['email'];
+     $message = $_POST['subject'];
+    
+     if (empty($name)) {
+         $errors[] = 'Name is empty';
+     }
+  
+     if (empty($email)) {
+         $errors[] = 'Email is empty';
+     } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+         $errors[] = 'Email is invalid';
+     }
+  
+     if (empty($message)) {
+         $errors[] = 'Message is empty';
+     }
   }
+
+
 
   $contact = new PHP_Email_Form;
   $contact->ajax = true;
