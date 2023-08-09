@@ -7,7 +7,7 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\SMTP;
 
-require "vendor/autoload.php";
+// require "vendor/autoload.php";
 require '/assets/vendor/phpmailer/src/Exception.php';
 require '/assets/vendor/phpmailer/src/PHPMailer.php';
 require '/assets/vendor/phpmailer/src/SMTP.php';
