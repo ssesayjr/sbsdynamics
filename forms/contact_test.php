@@ -5,9 +5,11 @@ if(isset($_POST['submit'])) {
     $email_to = "info@sbsdyn.com";
     $email_subject = "Mint Makeup & Beauty Enquiry";        
 
-    $fname = $_POST['name']; // required
-    $message = $_POST['subject']; // required
+    $name = $_POST['name']; // required
+    $message = $_POST['message']; // required
     $email_from = $_POST['email']; // required
+    $msg_subject = $_POST['subject']; // required
+
 
     // create email content
     $email_content = "From:"." ".$name."\n"."Email:"." ".$email_from."\n"."Message:"." ".$message; 
