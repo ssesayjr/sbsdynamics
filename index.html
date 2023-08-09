@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,6 +32,33 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+
+
+  <!-- Form Submission Script-->
+  <script type="text/javascript">
+    function validateForm() { 
+        var error = false;
+        var error_string = 'Please correct the following errors:\n\n';  
+        if (document.getElementById('name').value == ""){
+            error_string += "--> First name must be filled out.\n";
+            error = true;
+        } 
+        if (document.getElementById('subject').value == ""){
+            error_string += "--> Last name must be filled out.\n";
+            error = true;
+        } 
+        if (document.getElementById('email').value == ""){
+            error_string += "--> Email must be filled out.\n";
+            error = true;
+        }    
+        if(error){
+            alert(error_string);
+            return false;
+        }  else {
+            return true;
+        }
+    }
+    </script>
 
 </head>
 
@@ -561,7 +589,7 @@
           </div>
 
           <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form" id="contact-form">
+            <form action="forms/contact_test.php" method="post" role="form" class="php-email-form" onsubmit="return validateForm(this)">
               <div class="row">
                 <div class="form-group col-md-6">
                   <label for="name">Your Name</label>
@@ -594,7 +622,7 @@
       </div>
     </section><!-- End Contact Section -->
 
-    <!-- Constraints for Form    -->
+    <!-- Constraints for Form   
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
     <script>
@@ -634,7 +662,7 @@
              alert(errorMessage);
          }
      }, false);
-    </script>
+    </script> -->
   
     <!--End or Constraints-->
 
