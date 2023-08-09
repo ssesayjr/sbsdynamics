@@ -37,3 +37,4 @@ $mail->Body = $message;
 $mail->send();
 
 echo "email sent";
+?>
